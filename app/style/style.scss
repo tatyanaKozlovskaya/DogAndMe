@@ -1,0 +1,26 @@
+/* BULMA - Customising.
+========================================================================== */
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+
+$pink: #ffb3b3;
+$pink-invert: #fff;
+$primary-invert: #fff;
+$primary: #35B380;
+$info:#9E9E9E;
+
+@import "../../node_modules/bulma/bulma";
+
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+/* Functions and Mixins
+========================================================================== */
+@import "partials/utilities";
+@import "partials/mixins";
+
+/* Modules styles.
+========================================================================== */
+@import "partials/jquery-ui";
+@import "partials/jquery-ui.structure";
+@import "partials/jquery-ui.theme";
+@import "partials/flexbin";
+@import "partials/base";

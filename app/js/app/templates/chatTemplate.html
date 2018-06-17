@@ -1,0 +1,91 @@
+
+	    <div class="chat-container">
+       <% if(user){ %>
+	    <% if(chatsInfo.length >= 1){ %>
+	    <% var allCount = 0 %>
+	    	<% for(var i = 0; i < chatsInfo.length; i++ ){ %>
+	    	
+	    	 <div class="all-chats-list">
+		    <div class="chat-preview">
+                <% if(chatsInfo[i].messages){ %>
+                    <% var count = 0 %>
+				    <% for(var days in chatsInfo[i].messages) { %>
+				    	<% for(var message in chatsInfo[i].messages[days]) { %>
+				            <% if(chatsInfo[i].messages[days][message] && chatsInfo[i].messages[days][message].status && chatsInfo[i].messages[days][message].status === 'unread-' + currentUserDog.id){ %>
+				            	<% count++ %>
+				            	<% allCount++ %>
+
+				            <% } %>
+				    	<% } %>
+			    	<% } %>
+			    	
+			    	<% if( count >1 ){ %>
+			    	<span class="newMessages"><%= count %></span>
+			    	<% } %>
+                <% } %>
+                 
+			     <div class="dog-info chat-partner">
+			    <% for(var prop in chatsInfo[i].membersInfo){ %>
+				    <% if(chatsInfo[i] && chatsInfo[i].membersInfo && chatsInfo[i].membersInfo[prop] && chatsInfo[i].membersInfo[prop].id && chatsInfo[i].membersInfo[prop].id != currentUserDog.id){ %>
+				    	<div class="user-photo-container">
+				    		<img class="user-img" 
+				                <% if(chatsInfo[i].membersInfo[prop].avatar && chatsInfo[i].membersInfo[prop].avatar.downloadURL){ %>
+				                src="<%= chatsInfo[i].membersInfo[prop].avatar.downloadURL %>" 
+				                <% } else if(chatsInfo[i].membersInfo[prop]){ %> 
+				                src="img/user_pic.png" 
+				                <% } %> 
+				                <% if(chatsInfo[i].membersInfo[prop].id){ %>
+				                data-id="<%= chatsInfo[i].membersInfo[prop].id %>" 
+				                <% } %>
+				                >
+				    	</div>
+				    	<% if(chatsInfo[i].membersInfo[prop].name){ %>
+					    <span class="chat-name" 
+					    		<% if(chatsInfo[i].id){ %>
+				                data-id="<%= chatsInfo[i].id %>" 
+				                <% } %>>
+					    	<%= chatsInfo[i].membersInfo[prop].name %>
+					    </span>
+					     <% } %>
+				    <% } %>
+			    <% } %>
+	            </div>
+
+	            <div class="last-message"
+	            			 <% if(chatsInfo[i].id){ %>
+			                data-id="<%= chatsInfo[i].id %>" 
+			                <% } %>>
+                <% if(chatsInfo[i].messages){ %>
+			    <% var daysArr = [] %>
+			    <% for(var days in chatsInfo[i].messages) { %>
+			    <%  daysArr.push(chatsInfo[i].messages[days]) %>
+			    <% } %>
+
+			    <% var messagesArr = [] %>
+			    <% for(var messages in daysArr[daysArr.length-1]) { %>
+			    <% messagesArr.push(daysArr[daysArr.length-1][messages]) %>
+			    <% } %>
+			    <span><%= messagesArr[messagesArr.length-1].text %></span>   
+			    
+			    <% if (messagesArr[messagesArr.length-1].text.length >20 ){%> 
+			    <span class="drops">...</span>
+			    <% } %>
+			    <% } %>      	
+			    </div>
+		    </div>
+		    </div>
+
+	        <% } %>
+	         <% radio.trigger('newMessageCount', allCount) %>
+
+	    <% } else { %>
+		     <span class="no-messages">
+		     	Сообщений нет
+		     </span>
+	    <% } %>
+	    <% } else {%>
+	     <div>
+        	<h4 class="title is-4">Для того, чтобы воспользоваться данной функцией Вам необходимо <a href="#signUpStep1">зарегистрироваться</a></h4>
+   		 </div>
+		<% } %>
+	    </div>

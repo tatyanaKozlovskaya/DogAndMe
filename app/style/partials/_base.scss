@@ -1,0 +1,1674 @@
+
+$light-background-color: #EEEEEE;
+$light-font-color: #9E9E9E;
+$button-ok-color: #35B380;
+$button-hover-color:#CDDC39;
+$info:#9E9E9E;
+.menu-sandvich
+{
+    display:none;
+}
+.placemark_layout_container { 
+            position: relative;
+            font-family: Georgia;
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+        }        
+        /* Макет метки с "хвостиком" */
+        .polygon_layout {
+            position: relative;
+            background: #ffffff;
+            border: 4px solid orange;
+            width: 50px; 
+            height: 50px;
+            position: absolute;
+            left: -28px;
+            top: -76px;
+            color: #943A43;
+            border-radius:30px;
+
+        }
+        
+        .polygon_layout:after, .polygon_layout:before {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+        }
+        
+        .polygon_layout:after {
+            border-top-color: orange;
+            border-width: 10px;
+            margin-left: -10px;
+        }
+        
+        .polygon_layout:before {
+            border-top-color: orange;
+            border-width: 16px;
+            margin-left: -16px;
+        }
+        .dog-img
+        {
+            height:50px;
+            width:50px;
+            border-radius:25px;
+        }
+.display-none
+{
+    display:none;
+}
+.errorNot
+{
+    position:absolute;
+    width:90%;
+    margin: 20px 5% 0px 5%;
+
+}
+.title-info
+{
+   color: $light-font-color;
+}
+.icon-button
+{
+    display:block;
+    width:40px;
+    height:40px;
+    background: url(../img/icons1.png) no-repeat;
+    border-radius:20px;
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 3px 3px -2px rgba(0,0,0,.12);
+    position:absolute;
+    owerflow:hidden;
+    background-size:340px;
+}
+.icon-button span
+{   
+    position:absolute;
+    display:none;
+}
+.icon-button:hover
+{
+    box-shadow: 0px 0px 15px orange;
+}
+.icon-button:hover span
+{   
+    display:inline;
+    color: $light-background-color;
+    top: 10px;
+    right: 44px;
+    width: 122px;
+
+
+}
+input[type="radio"] {
+    vertical-align: middle;
+}
+.clear
+{
+	clear:both;
+}
+.preloader
+{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    background: url(../img/taco-preloader.gif) no-repeat center #f4b558;
+    z-index: 99;
+    background-size:300px;
+}
+.preloader span
+{
+    color:white;
+    font-weight:bold;
+    font-size: 50px;
+    top: 50%;
+    margin-top: 120px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.container
+{
+    max-width:1080px;
+    margin: 0px auto;
+    max-width: 1080px;
+    padding: 20px 7%;
+    position: relative;
+}
+.card
+{
+    border-radius: 4px;
+}
+.info-block-container
+{
+    margin: 1%;
+    padding: 2%;
+    border-radius: 4px;
+    background: white;
+    position:relative;
+    box-shadow:0px 0px 2px rgba(167, 152, 137, 0.57);
+}
+.download-photos
+{
+   opacity: 0; 
+    max-width: 205px;
+    height: 205px;
+    margin: 0 auto;
+    position: relative;
+    top: 50vh;
+    margin-top: -214px;
+    display: block;
+}
+.download-photos-label
+{
+    display: block;
+    max-width: 225px;
+    height: 225px;
+    background: #BDBDBD;
+    border-radius: 130px;
+    margin: 0 auto;
+    position: relative;
+    top: 50vh;
+    margin-top: -200px;
+    border: solid #E0E0E0 15px;
+    box-shadow: 0 0 5px grey;
+    text-align: center;
+    font-size: 46px;
+    color: white;
+    line-height: 4;
+}
+.profile-preloader
+{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    background: url(../img/Preloader-profile.gif) no-repeat center white;
+    z-index: 99;
+}
+.page > h2
+{
+	position: relative;
+    color: black;
+    font-size: 50px;
+    top: 40vh;
+    margin: auto;
+    text-align: center;
+}
+.header
+{
+	position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 20;
+    border-bottom: solid rgba(134, 141, 149, 0.38) 1px;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.45);
+    min-height: 60px;
+    padding: 10px;
+}
+.header .user-settings
+{
+	position: absolute;
+    padding: 50px 50px 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.90);
+    top: 90px;
+    right: 10px;
+    border: solid rgba(128, 128, 128, 0.26) 1px;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.45);
+    z-index: 20;
+}
+.header .user-settings .close-it
+{
+	  position:absolute;
+	  top:0px;
+	  left:0px;
+	  width: 40px;
+}
+.header .user-settings .user-img-container
+{
+  clear: both;
+  padding:0px;
+  width:100px;
+  margin: 0px auto;
+  height:100px;
+  border-radius:50px;
+  border: solid rgba(128, 128, 128, 0.26) 1px;
+  overflow:hidden;
+  position:relative;
+}
+.header .user-settings .user-name
+{
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.header .user-settings .button
+{
+    clear: both;
+    margin: 10px auto;
+    display: block;
+    margin-right:none;
+    background:$button-ok-color;
+    color: white;
+}
+.header .logo
+{
+	float:left;
+    padding-top:0px;
+}
+.header .autorisation
+{
+	float:right;
+	margin: 6px 10px;
+}
+.header .autorisation a
+{
+	color:#607D8B;
+}
+.header .autorisation a:hover
+{
+	color:#FF9800;
+}
+.header .autorisation a:first-child
+{
+	margin: 20px;
+    border-right: solid #607D8B 1px;
+    padding: 0 20px;
+}
+.header .autorisation .dog-and-user-name, .header .autorisation .dog-name
+{
+    margin: 10px;
+    display: block;
+    float: left;
+    border-right: none;
+    margin-right: 10px;
+
+}
+.header .autorisation .dog-name
+{
+    cursor:pointer;
+    margin-right: -3px;
+    color: #BDBDBD;
+}
+.header .autorisation .dog-name::after
+{
+    content:"&";
+    color:orange;
+    margin: 0 5px;
+
+}
+.header .autorisation .dogs-avatars
+{
+    float: left;
+}
+.header .autorisation .user-settings .user-header-img
+{
+    float:none;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.header .autorisation .user-settings .dogs-avatars
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.header .autorisation .user-settings .dog-name
+{
+    margin: 0px;
+}
+.header .autorisation .user-settings .dog-name::after
+{
+    margin: 0px;
+    display: block;
+    text-align: center;
+}
+.header .autorisation .user-header-img
+{
+	height:45px;
+	width:45px;
+	border-radius:26px;
+	border: solid gray 1px;
+	float: left;
+    overflow: hidden;
+    position: relative;
+    z-index:10;
+    margin-left:5px;
+}
+.header .autorisation .user-header-img.current-dog
+{
+    border: solid orange 2px;
+}
+.header .autorisation .user-header-img:hover
+{
+    z-index: 30;
+    border-radius: 28px;
+    top: -3px;
+    border: solid orange 2px;
+}
+.header .autorisation .user-header-img img
+{
+	max-width:125%;
+    position:relative;
+}
+.header .autorisation .add-new-dogs-profile
+{
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 152, 0, 0.83);
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    position: relative;
+    color: white;
+    line-height: 1.3;
+    text-align: center;
+    font-size: 34px;
+}
+.page
+{
+	width:100%;
+	min-height:100vh;
+    padding: 70px 2px;
+    background: $light-background-color;
+}
+.sign-in-form
+{
+	background: linear-gradient(135deg, #ff7422, #FF9800 30%, #FFC107);
+}
+.sign-in-form .card-sign-in
+{
+    width: 400px;
+    margin: 50vh auto;
+    padding: 4px;
+    top:-280px;
+    box-shadow: none;
+    background: rgba(96, 125, 139, 0);
+}
+.sign-in-form .card-sign-in h2
+{
+	font-weight: 400;
+	color:rgba(253, 249, 249, 0.6);
+
+}
+.sign-in-form .card-sign-in .field
+{
+    margin-bottom: 1.25rem;
+}
+.sign-in-form .card-sign-in .field.field-email
+{
+	border-top: solid rgba(247, 246, 244, 0.15) 2px;
+    padding-top: 32px;
+}
+.sign-in-form .card-sign-in .field.field-sign-in-button
+{
+	border-bottom: solid rgba(247, 246, 244, 0.15) 2px;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+}
+.sign-in-form .card-sign-in .field.field-sign-in-button .button
+{
+	background:$button-ok-color;
+}
+.sign-in-form .card-sign-in .field input
+{
+	height:46px;
+	border: solid white 1px;
+	box-shadow: 0 1px 10px rgba(255, 255, 255, 0.88);
+}
+.sign-in-form .card-sign-in .field .button
+{
+	width: 100%;
+    height: 46px;
+    background: orange;
+    border: solid white 1px;
+    box-shadow: 0 1px 10px rgba(255, 255, 255, 0.58);
+    color: white;
+    font-weight: 500;
+}
+.sign-in-form .card-sign-in .field .button:hover
+{
+	border: solid white 1px;
+	box-shadow: 0 1px 15px rgba(255, 255, 255, 0.99);
+	background:$button-hover-color;
+}
+.sign-in-form .card-sign-in .is-grouped p
+{
+	width:48%;
+}
+.sign-in-form .card-sign-in .field.is-grouped > .control:not(:last-child)
+{
+	margin-right:4%;
+}
+.sign-up-form .card-sign-up
+{
+    max-width: 700px;
+    margin: 0px auto;
+    border-radius: 4px;
+    top: 50vh;
+    position: relative;
+    margin-top: -415px;
+}
+.sign-up-form .card-sign-up .close-it
+{
+	position: absolute;
+    width: 40px;
+    top: 0px;
+    right: 0px;
+}
+.sign-up-form .card-sign-up .title
+{
+	display: block;
+    min-width: 120px;
+    background: orange;
+    padding: 10px;
+    color: white;
+}
+.sign-up-form .card-sign-up .step-title
+{
+    position: relative;
+    top: -50px;
+    left: 140px;
+    font-size: 18px;
+}
+.sign-up-form .card-sign-up .form
+{
+	margin: 50px auto;
+    max-width: 400px;
+}
+.sign-up-form.step-1 .card-sign-up .form .label
+{
+    display:inline;
+    font-weight: bold;
+}
+.sign-up-form .card-sign-up .form input
+{
+	height: 46px;
+}
+.sign-up-form.step-1 .card-sign-up .form input
+{
+     margin-top: 10px;
+}
+.sign-up-form .card-sign-up .form .sign-up-step-2
+{
+	width: 100%;
+    height: 46px;
+    border: solid white 1px;
+    box-shadow: 0 1px 10px rgba(255, 255, 255, 0.58);
+    color: white;
+    font-weight: 500;
+    margin: 30px 0px 50px;
+    padding-bottom:10px;
+
+}
+.sign-up-form .card-sign-up .form .sign-up-step-2:hover
+{
+	border: solid white 1px;
+	box-shadow: 0 1px 15px rgba(255, 255, 255, 0.99);
+	background:#CDDC39;
+}
+.sign-up-form.step-2 .card-sign-up .form
+{
+    margin: 50px auto;
+    padding-bottom: 10px;
+    max-width: 500px;
+}
+.sign-up-form.step-2 .card-sign-up .form .user-img
+{
+    width: 200px;
+    height: 200px;
+    display:flex;
+    margin: 20px auto;
+    border: solid orange 1px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.sign-up-form.step-2 .card-sign-up .form .photos-download
+{
+    border: none;
+    box-shadow: none;
+}
+.sign-up-form.step-2 .card-sign-up .form .description
+{
+    font-size: 12px;
+    color: gray;
+}
+.sign-up-form.step-2 .card-sign-up .form .button
+{
+    width: 200px;
+    margin: 50px auto;
+    color: white;
+    display: block;
+}
+.sign-up-form.step-2 .card-sign-up .form #mapRegistration
+{
+    width:100%;
+    height:300px;
+}
+.sign-up-form.step-2 .card-sign-up .form input, .sign-up-form .card-sign-up.step-2 .form select
+{
+    width:100%;
+}
+.ui-datepicker-header
+{
+    width: 220px; 
+}
+.profile-page .container .dogs-data
+{
+    display: flex;
+}
+.profile-page .container .button.follow, .profile-page .container .button.is-follower, .profile-page .container .button.send-message
+{
+    width: 90%;
+    margin: 20px 5% 10px;
+    background: #eeeeee;
+    color: #9E9E9E;
+    border: none;
+}
+.profile-page .container .button.send-message
+{
+    background: $button-hover-color;
+    color:white;
+}
+.profile-page .container .button.is-follower
+{
+    background: $button-ok-color;
+    color:white;
+}
+.profile-page .container .button.follow:hover, .profile-page .container .button.send-message:hover
+{
+     background:  $button-ok-color;
+     color:white;
+}
+.profile-page .container .button.is-follower:hover
+{
+    background: #eeeeee;
+    color: #9E9E9E;
+}
+.profile-page .container .button.follow:active
+{
+    background: $button-ok-color;
+    border:none;
+    color:white
+}
+.profile-page .container .button.is-follower:active
+{
+    background: $danger;
+    border:none;
+    color:white;
+}
+.profile-page .container .dogs-data .dog-photo
+{
+    float: left;
+    min-width: 41%;
+}
+.profile-page .container .dogs-data .dog-photo .dog-photo-container
+{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    border: solid $light-background-color 15px;
+    box-shadow: 0px 0px 2px rgba(128, 128, 128, 0.82);
+    overflow: hidden;
+    display: flex;
+    background: $light-background-color;
+    align-items: center;
+    justify-content: space-around;
+}
+.profile-page .container .dogs-data .dog-photo .dog-photo-container img
+{
+    align-self: center;
+    max-width: 125%;
+}
+.profile-page .container .dogs-data .dog-photo .need-autorisation, .profile-page .container .dogs-data .dog-photo .need-autorisation-to-message
+{
+    position: absolute;
+    z-index: 20;
+    background: #E0E0E0;
+    padding: 10px;
+    width: 90%;
+    color: #9E9E9E;
+    border-radius: 4px;
+}
+.profile-page .container .dogs-data .dog-info
+{
+    float: left;
+    width: 60%;
+}
+.profile-page .container .dogs-data .dog-info .columns:nth-child(5)
+{
+    padding-bottom:96px;
+}
+.profile-page .container .dogs-data .dog-info .followers-and-following
+{
+    width:100%;
+    position:absolute;
+    bottom:33px;
+}
+.profile-page .container .dogs-data .dog-info .followers-and-following div
+{
+    width:50%;
+    float:left;
+    text-align:center;
+}
+.profile-page .container .dogs-data .dog-info .followers-and-following div:first-child
+{
+    border-right:solid $light-background-color 3px;
+}
+.profile-page .container .dogs-data .dog-info .followers-and-following div span
+{
+    color:orange;
+    font-size:30px;
+}
+.profile-page .container .dogs-data .dog-info .followers-and-following div p
+{
+    color: $light-font-color;
+    cursor:pointer;
+}
+.profile-page .container .dogs-data .dog-info .following-dogs, .profile-page .container .dogs-data .dog-info .followers-dogs
+{
+    position: absolute;
+    background: white;
+    width: 50%;
+    border: solid #EEEEEE 1px;
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 20;
+    right: 0px;
+}
+.profile-page .container .dogs-data .dog-info .followers-dogs
+{
+    left:0px;
+}
+.profile-page .container .dogs-data .dog-info .following-dogs .dog-following, .profile-page .container .dogs-data .dog-info .followers-dogs .dog-follower
+{
+    clear: both;
+}
+.profile-page .container .dogs-data .dog-info .following-dogs .dog-following .dog-following-photo, .profile-page .container .dogs-data .dog-info .followers-dogs .dog-follower .dog-follower-photo
+{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 26px;
+    float: left;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-around;
+}
+.profile-page .container .dogs-data .dog-info .following-dogs .dog-following .dog-following-photo img, .profile-page .container .dogs-data .dog-info .followers-dogs .dog-follower .dog-follower-photo img
+{
+    align-self: center;
+    max-width: 125%;
+}
+.profile-page .container .dogs-data .dog-info .following-dogs .dog-following .dog-following-name, .profile-page .container .dogs-data .dog-info .followers-dogs .dog-follower .dog-follower-name
+{
+    margin: 15px 10px;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+.profile-page .container #profile-map
+{
+  min-height:250px;
+}
+.profile-page .container .dogs-data .dog-info .dogs-name
+{
+    border-bottom: solid #FFCC80 1px;
+    padding-bottom: 14px;
+}
+.profile-page .container .photogallery .icon-button
+{
+    background-position: -95px -278px;
+    right: 10px;
+    top: 10px;
+}
+.profile-page .container .photogallery .photo-container
+{
+    max-height: 306px;
+    overflow: hidden;
+    margin: 10px auto;
+    padding-top: 6px;
+}
+.profile-page .container .photogallery .photo-container-not-hidden
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.profile-page .container .photogallery .gallery-mini-photo
+{
+    width: 159px;
+    height: 150px;
+    overflow:hidden;
+    margin:2px;
+    display: flex;
+    background: #f7f6f3;
+}
+
+.profile-page .container .photogallery .fake-photo
+{
+    background:white;
+    height: 2px;
+}
+.profile-page .container .photogallery .gallery-mini-photo img
+{
+    align-self: center;
+}
+.profile-page .container .photogallery .view-all-photos
+{
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    top: 2px;
+    right: 7px;
+    margin:10px;
+}
+.profile-page .container .journal .icon-button
+{
+    background-position: -95px -231px;
+    right: 10px;
+    top: 10px;
+}
+.gallery-page .dog-info
+{
+    padding: 10px;
+}
+.gallery-page .dog-info .dog-name
+{
+    float: left;
+    display: block;
+    margin: 11px
+}
+.gallery-page .dog-info .dog-photo
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    overflow: hidden;
+    border: solid orange 1px;
+    float: left;
+}
+.gallery-container
+{
+$flexbin-row-height: 300px !default;
+$flexbin-space: 5px !default;
+$flexbin-tablet-max: 980px !default;
+$flexbin-row-height-tablet: 150px !default;
+$flexbin-space-tablet: $flexbin-space !default;
+$flexbin-phone-max: 400px !default;
+$flexbin-row-height-phone: 100px !default;
+$flexbin-space-phone: $flexbin-space !default;
+}
+.news-container .container-for-news
+{
+    margin: 10px;
+    border-top: solid #EEEEEE 1px;
+    padding: 10px 10px;
+    border-radius: 4px;
+    position: relative;
+}
+.news-container .container-for-news.sos
+{
+    background: rgba(255, 0, 0, 0.05);
+}
+.news-container .container-for-news .sos-span
+{
+    width: 30px;
+    height: 30px;
+    background: $danger;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    line-height: 1.8;
+    margin-right:2px;
+    width:50px;
+
+}
+.news-container .container-for-news .news-time
+{
+    font-size: 14px;
+    color: #BDBDBD;
+}
+.news-container .container-for-news .news-description
+{
+    padding: 10px 30px 20px 0px;
+}
+.news-container .container-for-news .photo-container
+{
+    display: flex;
+    justify-content: center;
+}
+.news-container .container-for-news .photo-container .news-mini-photo
+{
+    margin:2px;
+    
+}
+.news-container .container-for-news .photo-container .news-mini-photo img
+{
+    max-height:600px;
+    
+
+}
+.delete-news, .close-following-dogs, .close-followers-dogs
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 3px 8px;
+    background: rgba(128, 128, 128, 0.18);
+    color: white;
+    font-size: 12px;
+    border-radius: 2px;
+    cursor:pointer;
+}
+.popup
+{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    margin-top: -36px;
+    z-index: 0;
+    top: 0px;
+    background: rgba(158, 158, 158, 0.43);
+}
+.popup .current-photo
+{
+    max-width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 95px;
+    border-radius: 4px;
+}
+.popup .current-photo img
+{
+    align-self: center;
+    max-width: 70%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+.popup .close-popup
+{
+    content: "x";
+    position: absolute;
+    display: block;
+    font-size: 40px;
+    background: #EEEEEE;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 1.1;
+    top: 0px;
+    right: 0px;
+    border-radius: 4px;
+    color: rgba(158, 158, 158, 0.72);
+}
+.popup .current-photo figure
+{
+    height: 80%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background: #EEEEEE;
+    top: 10%;
+}
+.popup .current-photo figure figcaption
+{
+
+    background: white;
+    padding: 10px;
+    height: 100%;
+    width: 30%;
+    font-size: 12px;
+    float: right;
+    position: relative;
+}
+.popup .current-photo figure figcaption span
+{
+    display:block;
+    max-width:320px;
+    
+}
+.popup .current-photo figure figcaption span.delete-photo
+{
+    padding: 20px 10px 10px;
+    color: #9E9E9E;
+    cursor: pointer;
+    position: absolute;
+    bottom: 17px;
+    left: 5px;
+    display: block;
+}
+.popup .gallery-popup-photo-description
+{
+
+    height: 87%;
+    overflow-y: auto;
+    border-top: solid rgba(128, 128, 128, 0.28) 1px;
+    border-bottom: solid rgba(128, 128, 128, 0.26) 1px;
+    font-size: 11px;
+    display: block;
+    max-width: 320px;
+    background: white;
+    padding: 10px;
+
+}
+.popup .desc
+{
+    padding: 5px;
+    display: block;
+}
+.map-page
+{
+    padding: 60px 2px;
+}
+.map-page #map-map
+{
+   min-height:100vh;
+   width:100%;
+}
+
+.news-page .filter-buttons
+{
+    padding:10px;
+}
+.news-page .filter-buttons button
+{
+    display: block;
+    float: left;
+    width: 150px;
+    background: white;
+    color: #9E9E9E;
+    box-shadow: none;
+    border: solid #EEEEEE 1px;
+    padding: 10px;
+    line-height: 1;
+    border-radius: 4px;
+    margin-bottom:-1px;
+    margin-right:-1px;
+}
+.news-page .filter-buttons .filtered
+{
+    color: $button-ok-color;
+}
+.news-page .filter-buttons button:hover
+{
+    color:$button-hover-color;
+}
+.news-page .news
+{
+    clear:both;
+}
+.news-page .userInfo
+{
+    clear: both;
+    padding: 5px 0px;
+}
+.news-page .userInfo .user-img-container
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 26px;
+    overflow: hidden;
+    float: left;
+    border: solid white 1px;
+    cursor:pointer;
+    display: flex;
+    background: $light-background-color;
+    align-items: center;
+    justify-content: space-around;
+}
+.news-page .userInfo .user-img-container img
+{
+    align-self: center;
+    max-width:125%;
+}
+.news-page .userInfo .user-img-container:hover
+{
+    border:solid orange 1px;
+}
+.news-page .userInfo .dog-name
+{
+    display: block;
+    float: left;
+    margin: 15px;
+}
+.notification-page
+{
+
+}
+.chat-page .container-chat
+{
+    width:90%;
+    margin:0 auto;
+    border-radius:4px;
+    border: solid #E0E0E0 1px;
+    position:relative;
+}
+.chat-page .container-chat  .modules
+{
+    min-height: 70vh;
+    display:flex;
+    background:white;
+}
+.chat-page .container-chat  .modules > div:first-child
+{
+    border-right:solid #E0E0E0 1px;
+}
+.chat-page .container-chat .all-chats
+{
+    width:400px;
+    height: 70vh;
+    overflow: auto;
+}
+.chat-page .container-chat .all-chats .all-chats-list .chat-preview
+{
+    display: flex;
+    background: white;
+    position: relative;
+}
+.chat-page .container-chat .all-chats .all-chats-list .chat-preview .newMessages
+{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: $danger;
+    color: white;
+    border-radius: 20px;
+    padding: 7px;
+    line-height: 0.8;
+}
+.chat-page .container-chat .all-chats .all-chats-list .chat-preview .dog-info
+{
+    width: 80px;
+    text-align: center;
+    padding: 10px;
+}
+.chat-page .container-chat .all-chats .all-chats-list .chat-preview .chat-name
+{
+    position: absolute;
+    top: 9px;
+    left: 77px;
+    color: gray;
+}
+.chat-page .container-chat .all-chats .all-chats-list .chat-preview .dog-info  .user-photo-container
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+}
+.chat-page .container-chat .all-chats .all-chats-list .chat-preview .dog-info  .user-photo-container img
+{
+    max-width: 125%;
+}
+.chat-page .container-chat .all-chats .all-chats-list .chat-preview .last-message
+{
+    width: 80%;
+    margin: 0px;
+    background: white;
+    border-bottom: solid #E0E0E0 1px;
+    padding: 40px 0px 0px;
+    font-style: italic;
+    color: #BDBDBD;
+    max-height: 68px;
+}
+.chat-page .container-chat .all-chats .all-chats-list .chat-preview .drops
+{
+    position: absolute;
+    top: 40px;
+    right: 1px;
+    background: white;
+    width: 50px
+}
+.chat-page .container-chat .chat-room
+{
+    width:90%;
+    display: flex;
+    flex-direction: column;
+}
+.chat-page .container-chat .chat-room .messages-container
+{
+    height: 90%;
+    position: relative;
+    overflow-y: auto;
+}
+.chat-page .container-chat .chat-room .messages-container .messages
+{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+.chat-page .container-chat .chat-room .messages-container .day-container
+{
+    border-top: solid #EEEEEE 1px;
+    margin-top: 24px;
+    position: relative;
+    padding: 20px 0px;
+}
+.chat-page .container-chat .chat-room .messages-container .day-container .date
+{
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    margin-left: 50%;
+    background: white;
+    padding: 5px 10px;
+    border: solid #EEEEEE 1px;
+    border-radius: 20px;
+    color: gray;
+}
+.chat-page .container-chat .chat-room .messages-container .message-container
+{
+    padding:0px 10px;
+    position:relative;
+}
+.chat-page .container-chat .chat-room .messages-container .message-container .message-time
+{
+    position: absolute;
+    bottom: 5px;
+    margin-left: -58px;
+    font-size: 12px;
+    color: gray;
+}
+.chat-page .container-chat .chat-room .messages-container .message-container.right
+{
+    text-align:right;
+}
+.chat-page .container-chat .chat-room .messages-container .message
+{
+    padding: 5px 10px 25px;
+    margin: 3px;
+    max-width: 350px;
+    align-content: right;
+    display: inline-block;
+}
+.chat-page .container-chat .chat-room .toolbar
+{
+    min-height: 60px;
+    padding: 20px;
+    border-top: solid #EEEEEE 1px;
+}
+.chat-page .container-chat .chat-room .toolbar-container
+{
+    display: flex;
+    max-width: 660px;
+    margin: 0 auto;
+}
+.chat-page .container-chat .chat-room .toolbar-container .send-message
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 26px;
+    background: $button-hover-color;
+    font-size: 26px;
+    color:white;
+    margin-left:2px;
+    border:solid white 1px;
+}
+.chat-page .container-chat .chat-room .toolbar-container .send-message:hover
+{
+    background: $button-ok-color;
+}
+.chat-page .container-chat .chat-room .message-input
+{
+    height: 50px;
+    border-radius: 26px;
+    border: solid orange 1px;
+}
+.chat-page .container-chat .chat-room .names
+{
+    display: flex;
+    max-height: 85px;
+    overflow: hidden;
+    border-bottom: solid #EEEEEE 1px;
+    padding-bottom: 10px;
+}
+.chat-page .container-chat .chat-room .names > div
+{
+    width: 50%;
+    padding: 10px;
+}
+.chat-page .container-chat .chat-room .names div .user-photo-container
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: solid orange 1px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    float: left;
+}
+.chat-page .container-chat .chat-room .names .my-dog-in-room .user-photo-container
+{
+    float:right;
+}
+.chat-page .container-chat .chat-room .names div .user-photo-container img
+{
+    align-self: center;
+    max-width:125%;
+}
+.chat-page .container-chat .chat-room .names div .chat-name
+{
+    display: block;
+    float: left;
+    padding: 18px;
+}
+.chat-page .container-chat .chat-room .names .my-dog-in-room .chat-name
+{
+    float:right;
+}
+.chat-page .container-chat .title
+{
+    min-height: 80px;
+    background: orange;
+    padding: 10px;
+    color: white;
+    margin:0px;
+}
+.chat-page .container-chat .title.is-4
+{
+    background: white;
+    color: gray;
+    padding: 72px;
+    min-height: 90vh;
+    width:100%;
+    position:absolute;
+}
+.chat-page .container-chat .no-messages
+{
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 50px 0px;
+    font-size: 18px;
+    color: gray;
+}
+.add-photo-page .card .title, .add-news-page .card .title
+{
+    background: #BDBDBD;
+    padding: 10px;
+    color: white;
+}
+.add-photo-page .card .form, .add-news-page .card .form
+{
+    padding: 20px;
+}
+.add-photo-page .card .form .photo-container, .add-news-page .card .form .photo-container
+{
+    min-height: 100px;
+    background: #EEEEEE;
+    text-align: center;
+    border-radius: 4px;
+    padding: 20px;
+}
+.add-photo-page .card .form .photo-container .container-for-photo
+{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.add-photo-page .card .form .photo-container.one-photo, .add-news-page .card .form .photo-container
+{
+    border: dashed gray 1px;
+}
+.add-photo-page .card .form .button:hover
+{
+    background: $button-hover-color;
+}
+.add-news-page .card .add-photo-small-button, .add-news-page .card .sos
+{
+    position: absolute;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    right: 50px;
+    background: rgba(128, 128, 128, 0.4);
+    border-radius: 4px;
+}
+.add-news-page .card .add-photo-small-button
+{
+    background: url(../img/ui-icons.png) no-repeat -289px -176px rgba(128, 128, 128, 0.4);
+    background-size: 359px;
+}
+.add-news-page .card .sos
+{
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    line-height: 1.8;
+    margin-left:1px;
+    right:0px;
+    width:50px;
+}
+.add-news-page .card .news-description
+{
+    text-align: left;
+}
+.add-news-page .card .sos.sos-true
+{
+    background: $danger;
+}
+.add-news-page .card .download-photos
+{
+    max-width: 28px;
+    height: 28px;
+    margin: 0px;
+    position: relative;
+    top: 28px;
+    margin-top: -28px;
+    display: block;
+
+}
+.add-news-page .card .field
+{
+    position:relative;
+}
+.add-news-page .card .photo-container
+{
+    display:flex; 
+}
+.add-news-page .card .photo-container .container-for-photo
+{
+    padding:2px;
+    position:relative;
+}
+.add-news-page .card .photo-container .delete-photo
+{
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    background: rgba(255, 255, 255, 0.69);
+    padding: 5px 10px;
+    border-radius: 2px;
+    cursor:pointer;
+}
+.settings-page .add-dog
+{
+    width: 320px;
+    margin: 50% auto;
+    top: -100px;
+    display: block;
+    position: relative;
+    background: orange;
+    color: white;
+    font-size: 14px;
+    padding: 30px 60px;
+    border: solid #ffffff 1px;
+    box-shadow: 0 0 20px #ffffff;
+    border-radius: 4px;
+}
+
+aside
+{
+	position:fixed;
+	top:100vh;
+    margin-top:-45px;
+	width: 100%;
+	border-top: solid rgba(134, 141, 149, 0.38) 1px;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.45);
+	background:white;
+}
+aside .new-messages-count
+{
+    position: absolute;
+    top:10px;
+    right: 50%;
+    margin-right: -50px;
+    width: 30px;
+    height: 30px;
+    background: $danger;
+    color: white;
+    border-radius: 20px;
+    padding: 7px;
+    line-height: 1;
+}
+aside ul
+{
+	display: flex;
+}
+aside ul li
+{
+	display: block;
+    float: right;
+    padding: 20px;
+    width: 20%;
+    text-align: center;
+    position:relative;
+}
+aside ul li.add-photo
+{
+    text-align: center;
+    position: relative;
+    padding: 10px 0px;
+}
+aside ul li.add-photo label
+{
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+    width: 100%;
+}
+aside ul li a, aside ul li label
+{
+	color:#868D95;
+}
+aside ul li a:hover
+{
+	color:#ffa800;
+}
+@media all and (max-width:1000px)
+{
+   aside
+{
+	width: 1320px;
+}
+aside ul li
+{
+    width: 190px;
+}
+
+}
+@media screen and (max-width: 769px)
+{   
+    
+    .preloader
+    {
+        background-size:100px;
+    }
+    .profile-page
+    {
+        padding: 60px 2px 100px 2px;
+    }
+    .profile-page .container .photogallery .gallery-mini-photo
+    {
+        width: 100px;
+        height: 100px;
+     }
+     .profile-page .container .photogallery .view-all-photos 
+     {
+    top: 2px;
+    right: 0px;
+    margin:10px;
+    }
+    .header .autorisation
+    {
+     margin: 6px 10px;
+    }
+    .header .autorisation a
+    {
+     font-size:14px;
+     padding:0px 10px;
+    }
+    .header .autorisation a:first-child 
+    {
+        margin: 20px 0px;
+    }
+    .sign-up-form .card-sign-up 
+    {
+        margin: -313px 20px 0px;
+    }
+    .sign-up-form .card-sign-up .form
+    {
+     padding:10px;
+    }
+    aside 
+    {
+        width: 820px;
+        height:50px;
+    }
+    aside ul li
+    {
+        padding:10px;
+    }
+    aside ul li a, aside ul li label
+    {
+        font-size:8px;
+    }
+    .preloader span
+    {
+        font-size: 20px;
+        margin-top:-60px;
+    }
+    .header .logo .is-3
+    {
+      font-size:20px;
+      padding-top: 16px;
+    }
+    .field-label 
+    {
+        flex-grow: 2;
+    }
+    .field-body
+    {
+        flex-grow: 4;
+    }
+    .info-block-container
+    {
+        width:96%!important;
+        float:none!important;
+        margin: 4% 2%;
+        padding: 2%;
+        font-size:13px;
+    }
+    .columns
+    {
+      display:flex!important;
+    }
+    .profile-page .container .dogs-data
+    {
+        display:block;
+    }
+    .profile-page .container .dogs-data .dog-photo 
+    {
+        padding: 20px;
+    }
+    .profile-page .container .dogs-data .dog-photo .dog-photo-container
+    {
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .chat-page .container-chat .chat-room 
+    {
+    width: 100%;
+    }
+    .chat-page .container-chat .chat-room .messages-container
+     {
+    height: 90%;
+    }
+    .chat-page .container-chat .all-chats
+    {
+    width: 100%;
+    display:none;
+    }
+    .chat-page .container-chat .modules
+    {
+    min-height: 80vh;
+    }
+    .menu-sandvich
+    {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 4px;
+    border: solid #E0E0E0 1px;
+    display: block;
+    float: left;
+    margin: 15px 10px;
+    font-size: 34px;
+    line-height: 1.3;
+    padding: 0px 9px;
+    color: orange;
+    background: white;
+    }
+}
+@media screen and (max-width: 400px)
+{
+
+    .container
+    {
+        padding: 20px;
+    }
+    .header .autorisation
+    {
+        margin: 6px 0px;
+    }
+    .header .autorisation a, .header .autorisation a:first-child
+    {
+        padding: 0 10px;
+        font-size: 13px;
+    }
+    .header .logo .is-3
+    {
+        font-size: 15px;
+        padding-top: 10px;
+    }
+    .profile-page .container .dogs-data .dog-info
+    {
+        font-size: 11px;
+    }
+    .profile-page .container .dogs-data .dog-photo .dog-photo-container 
+    {
+        margin: 0 auto;
+        width: 225px;
+        height: 225px;
+    }
+    .profile-page .container .photogallery .photo-container
+    {
+        max-height: 254px;
+    }
+    .profile-page .container .photogallery .gallery-mini-photo
+    {
+        width: 80px;
+        height: 80px;
+     }
+     .profile-page .container .photogallery .view-all-photos
+    {
+    top: -3px;
+    right: 0px;
+    margin:10px;
+    }
+    .sign-in-form .card-sign-in .field.is-grouped .button
+    {
+        font-size: 14px;
+    }
+
+}

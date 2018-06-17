@@ -1,0 +1,115 @@
+<div class="card card-sign-up">
+     <div class="close-it">
+            <a href="#map"><img src="img/close-img.png" class="close-user-profile"></a>
+        </div>
+      <h2 class="title is-2">
+        Информация о собаке
+      </h2>
+      <div class="form">
+      <div class="user-img">
+          <img class="user-registration-img" src="img/user_pic.png">
+      </div>
+        <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Загрузить фото:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input class="input photos-download" type="file">
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Имя собаки:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input class="input dog-name" type="text" placeholder="Dog's name">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Пол:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                   <div class="select is-fullwidth">
+                    <select class="gender-dog">
+                        <option value="Девочка">Девочка</option>
+                        <option value="Мальчик">Мальчик</option>
+                      </select>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Порода</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select class="breed-of-dog">
+
+                       <% for (var m = 0; m < breedsOfDogs.length; m++) { %>
+                        <option value="<%= breedsOfDogs[m] %>"><%= breedsOfDogs[m] %></option>
+                        <% } %>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Дата рождения:</label>
+              </div>
+                 <div class="field-body">
+                    <div class="field">
+                      <div class="control">
+                       <input class="input birthday-dog" type="text" id="datepicker">
+                      </div>
+                    </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Ваш адрес:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input class="input dog-address" type="text" placeholder="">
+                    <p class="description">Введите Ваш адрес, если поле пустое или адрес в поле не совпадает</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="mapRegistration"></div>
+            
+           
+
+        <div class="field">
+            <p class="control">
+                <button class="button is-primary sign-up-dog">Создать профиль!</button>
+            </p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

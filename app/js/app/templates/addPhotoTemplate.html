@@ -1,0 +1,50 @@
+<div class="container">
+<% if(user){ %>
+<% if (snapshot) { %>
+    <div class="card">
+        <h2 class="title is-2">
+            Добавить фото
+        </h2>
+        <div class="form">
+            <div class="field">
+                <p class="control">
+                    <div class="photo-container one-photo">
+                         <div class="container-for-photo">
+                             <img class="" 
+                                <% if(snapshot && snapshot.downloadURL){ %>
+                                src="<%= snapshot.downloadURL %>" 
+                                <% } else if(snapshot){ %> 
+                                src="img/user_pic.png" 
+                                <% } %> 
+                                >
+                         </div>
+                    </div>
+                </p>
+            </div>
+            <div class="field">
+                <label class="label">Добавьте описание:</label>
+                <p class="control">
+                     <textarea class="textarea photo-description" type="text" placeholder="text"></textarea>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <button class="button is-primary upload-photo">Опубликовать</button>
+                    <button class="button is-info cancel-photo">Отмена</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% } else { %>
+    <div class="add-photo-big-button">
+            <label class="download-photos-label">+</label>
+            <input class="input download-photos" type="file">
+    </div>
+    <% } %>
+
+<% } else { %>
+    <div>
+        <h4 class="title is-4">Для того, чтобы воспользоваться данной функцией Вам необходимо <a href="#signUpStep1">зарегистрироваться</a></h4>
+    </div>
+<% } %>
+</div>

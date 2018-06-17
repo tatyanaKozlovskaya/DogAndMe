@@ -1,0 +1,84 @@
+<div class="names">
+	 <% if(user){ %>
+ 			<div class="chat-room-partner">
+			    <% for(var prop in chat.membersInfo){ %>
+				    <% if(chat.membersInfo[prop] && chat.membersInfo[prop].id && chat.membersInfo[prop].id != currentUserDog.id){ %>
+				    	<div class="user-photo-container">
+				    		<img class="user-img" 
+				                <% if(chat.membersInfo[prop].avatar && chat.membersInfo[prop].avatar.downloadURL){ %>
+				                src="<%= chat.membersInfo[prop].avatar.downloadURL %>" 
+				                <% } else if(chat.membersInfo[prop]){ %> 
+				                src="img/user_pic.png" 
+				                <% } %> 
+				                <% if(chat.membersInfo[prop].id){ %>
+				                data-id="<%= chat.membersInfo[prop].id %>" 
+				                <% } %>
+				                >
+				    	</div>
+				    	<% if(chat.membersInfo[prop].name){ %>
+					    <span class="chat-name">
+					    	<%= chat.membersInfo[prop].name %>
+					    </span>
+					    <% } %>
+				    <% } %>
+			    <% } %>
+	        </div>
+
+			 <div class="my-dog-in-room">
+			    <% for(var prop in chat.membersInfo){ %>
+				    <% if(chat.membersInfo[prop] && chat.membersInfo[prop].id && chat.membersInfo[prop].id == currentUserDog.id){ %>
+				    	<div class="user-photo-container">
+				    		<img class="user-img" 
+				                <% if(chat.membersInfo[prop].avatar && chat.membersInfo[prop].avatar.downloadURL){ %>
+				                src="<%= chat.membersInfo[prop].avatar.downloadURL %>" 
+				                <% } else if(chat.membersInfo[prop]){ %> 
+				                src="img/user_pic.png" 
+				                <% } %> 
+				                <% if(chat.membersInfo[prop].id){ %>
+				                data-id="<%= chat.membersInfo[prop].id %>" 
+				                <% } %>
+				                >
+				    	</div>
+				    	<% if(chat.membersInfo[prop].name){ %>
+					    <span class="chat-name">
+					    	<%= chat.membersInfo[prop].name %>
+					    </span>
+					    <% } %>
+				    <% } %> 
+			    <% } %>
+	        </div>
+ </div>
+
+<div class="messages-container">
+	<div class="messages">
+	    <% if(chat.messages){ %>
+	    	<% for(var prop in chat.messages){ %>
+	    		<% if(chat.messages[prop]){ %>
+	    		    <div class="day-container">
+	    		        <span class="date"><% if(chat.messages[prop].date){print(chat.messages[prop].date)}%></span>
+	    		    	<% for(var message in chat.messages[prop]){ %>
+	    		    	     <% if(chat.messages[prop][message].text && chat.messages[prop][message].idDog && currentUserDog.id){ %>
+ 								<div class="message-container <% if(chat.messages[prop][message].idDog === currentUserDog.id){ print('right')} else {print('left')}%>" >
+						    		<span class="message" <% if(chat.messages[prop][message].id){ %> 
+						    							  data-id="<%= chat.messages[prop][message].id %>"
+						    							  <% } %>>
+						    			<%= chat.messages[prop][message].text %>
+						    		</span>
+						    		<span class="message-time"><%= chat.messages[prop][message].time %></span>
+					    		</div>
+	    		    	     <% } %>
+	    		    	<% } %>
+	    		    </div>
+	    		<% } %>
+	    	<% } %>
+	    <% } %>
+	</diV>
+</div>
+
+<div class="toolbar">
+	<div class="toolbar-container">
+		<input class="input message-input" type="text" placeholder="Сообщение...&#9998;">
+		<button class="send-message">&#10148;</button>
+	</div>
+</div>
+<% } %>

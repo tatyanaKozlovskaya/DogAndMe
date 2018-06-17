@@ -1,0 +1,89 @@
+<div class="logo">
+<h2 class="title is-3">Dog and me</h2>
+</div>
+<div class="autorisation">
+<% if (user){ %>
+<% if(user.dogs){ %>
+    <% if(dogs){ %>
+        <div class="dogs-avatars">
+           <% for (var i=0;i<dogs.length;i++){ %>
+            <div class="user-header-img <% if(dogs[i].id === currentUserDog.id){ %>
+            <% print('current-dog') %>
+           <% }%>">
+                <img class="user-img" 
+                <% if(dogs[i] && dogs[i].avatar && dogs[i].avatar.downloadURL){ %>
+                src="<%= dogs[i].avatar.downloadURL %>" 
+                <% } else if(dogs[i]){ %> 
+                src="img/user_pic.png" 
+                <% } %> 
+                <% if(dogs[i] && dogs[i].id ){ %>
+                data-id="<%= dogs[i].id %>" 
+                <% } %>
+                >
+            </div>
+            <span class="dog-name"  <% if(dogs[i] && dogs[i].id ){ %>
+             data-id="<%= dogs[i].id %>" 
+             <% } %>>
+               
+                <% if(dogs[i] && dogs[i].name){ 
+                print(dogs[i].name) 
+                } else if(dogs[i]){ 
+                print('dog') 
+                } %>
+               
+                
+             </span>
+            <% } %>
+        </div>
+    <% } %>
+    <span class="dog-and-user-name"><%if(user.name){print(user.name)}else{print('Вы')}%></span>
+  <% } else { %>
+<a href="#signUpStep2" class="add-new-dogs-profile">+</a>
+<% } %>
+
+<div class="user-settings display-none">
+     <div class="close-it">
+        <img src="img/close-img.png" class="close-user-profile">
+    </div>
+       <% if(dogs){ %>
+        <div class="dogs-avatars">
+           <% for (var i=0;i<dogs.length;i++){ %>
+            <div class="user-header-img">
+                <img class="user-img" 
+                <% if(dogs[i] && dogs[i].avatar && dogs[i].avatar.downloadURL){ %>
+                src="<%= dogs[i].avatar.downloadURL %>" 
+                <% } else if(dogs[i]){ %> 
+                src="img/user_pic.png" 
+                <% } %> 
+                <% if(dogs[i] && dogs[i].id ){ %>
+                data-id="<%= dogs[i].id %>" 
+                <% } %>
+                >
+            </div>
+            <span class="dog-name"  <% if(dogs[i] && dogs[i].id ){ %>
+             data-id="<%= dogs[i].id %>" 
+             <% } %>>
+               
+                <% if(dogs[i] && dogs[i].name){ 
+                print(dogs[i].name) 
+                } else if(dogs[i]){ 
+                print('dog') 
+                } %>
+               
+                
+             </span>
+            <% } %>
+        </div>
+    <% } %>
+    <span class="user-name"><% if( user.name){print(user.name)} %></span>
+    <button class="button sign-out">Выйти</button>
+</div>
+<% } else {%>
+
+	<a href="#signIn" >Войти</a>
+	<a href="#signUpStep1" >Зарегистрироваться</a>
+
+<% } %>
+</div>
+
+<div class="clear"></div>

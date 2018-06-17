@@ -1,0 +1,57 @@
+<div class="container">
+<% if(user){ %>
+    <div class="card">
+        <h2 class="title is-2">
+            Добавить новость
+        </h2>
+        <div class="form">
+        <div class="field">
+                <label class="label"></label>
+                <p class="control">
+                     <textarea class="textarea news-description" type="text" placeholder="Что у вас нового?"><% if(description){print(description)}%></textarea>
+                     <div class="add-photo-small-button">
+                        <label class="download-photos-news-label"></label>
+                        <input class="input download-photos" type="file">
+                    </div>
+                     <span class="sos">SOS</span>
+                </p>
+            </div>
+           <% if (snapshot) { %>
+            <div class="field">
+                <p class="control">
+                    <div class="photo-container">
+                        <% for (var prop in snapshot){ %>
+                          <div class="container-for-photo">
+                                <img class="user-img" 
+                                <% if(snapshot && snapshot[prop] && snapshot[prop].downloadURL){ %>
+                                src="<%= snapshot[prop].downloadURL %>" 
+                                <% } else if(snapshot[prop]){ %> 
+                                src="img/user_pic.png" 
+                                <% } %> 
+                                <% if(snapshot && snapshot[prop] && snapshot[prop].id ){ %>
+                                data-id="<%= snapshot[prop].id %>" 
+                                <% } %>
+                                >
+                                <span class="delete-photo" <% if(snapshot && snapshot[prop] && snapshot[prop].id ){ %>
+                                data-id="<%= snapshot[prop].id %>" 
+                                <% } %>>X</span>
+                            </div>
+                            <% } %>
+                    </div>
+                </p>
+            </div>
+            <% } %>
+            <div class="field">
+                <p class="control">
+                    <button class="button is-primary upload-news">Опубликовать</button>
+                    <button class="button is-info cancel-news">Отмена</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% } else { %>
+    <div>
+        <h4 class="title is-4">Для того, чтобы воспользоваться данной функцией Вам необходимо <a href="#signUpStep1">зарегистрироваться</a></h4>
+    </div>
+    <% } %>
+</div>

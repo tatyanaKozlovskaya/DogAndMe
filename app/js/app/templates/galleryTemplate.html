@@ -1,0 +1,58 @@
+<div class="info-block-container">
+<div class="dog-info">
+      <div class="dog-photo">
+        <img class="dog-photo-img" 
+                <% if(dogsInfo.avatar.downloadURL){ %>
+                src="<%= dogsInfo.avatar.downloadURL %>" 
+                <% } else if(dogsInfo){ %> 
+                src="img/user_pic.png" 
+                <% } %> 
+                <% if(dogsInfo.id ){ %>
+                data-id="<%= dogsInfo.id %>" 
+                <% } %>
+                >
+      </div> 
+      <span class="dog-name">
+                <% if(dogsInfo.name ){print(dogsInfo.name)} %>
+      </span>
+      <div class="clear"></div>
+</div>
+<div class="flexbin flexbin-margin">
+ <% for (var prop in dogsInfo.photos){ %>
+      <div>
+        <img class="gallery-img" 
+                <% if(dogsInfo.photos[prop].downloadURL){ %>
+                src="<%= dogsInfo.photos[prop].downloadURL %>" 
+                <% } else if(dogsInfo.photos[prop]){ %> 
+                src="img/user_pic.png" 
+                <% } %> 
+                <% if(dogsInfo.photos[prop].description ){ %>
+                data-description="<%= dogsInfo.photos[prop].description %>" 
+                <% } %>
+                <% if(dogsInfo.photos[prop].puth ){ %>
+                data-puth="<%= dogsInfo.photos[prop].puth %>" 
+                <% } %>
+                <% if(dogId){ %>
+                data-id="<%= dogId %>" 
+                <% } %>
+                >
+      </div> 
+    <% } %>
+</div>
+</div>
+<div class="popup display-none">
+  <div class="current-photo">
+     <figure>
+     <img src="" class="gallery-popup-photo">
+     <figcaption>
+     <span class="desc">Описание:</span>
+     <span class="gallery-popup-photo-description"></span>
+      <% if (dogsInfo.ownerUid && user && user.uid && dogsInfo.ownerUid === user.uid) { %>
+        <span class="delete-photo">удалить фото</span>
+     <% } %>
+     </figcaption>
+     
+     </figure>
+     <span class="close-popup">X</span>
+  </div>
+</div>

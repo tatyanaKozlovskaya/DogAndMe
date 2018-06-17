@@ -1,0 +1,305 @@
+<div class="container">
+  <div class="dogs-data">
+    <div class="dog-photo info-block-container">
+     <div class="dog-photo-container">
+      <img class="dogs-img" 
+                <% if(dogsInfo && dogsInfo.avatar && dogsInfo.avatar.downloadURL){ %>
+                src="<%= dogsInfo.avatar.downloadURL %>" 
+                <% } else if(dogsInfo){ %> 
+                src="img/user_pic.png" 
+                <% } %> 
+                <% if(dogsInfo && dogsInfo.id ){ %>
+                data-id="<%= dogsInfo.id %>" 
+                <% } %>
+                >
+      </div>
+      <% if((dogsInfo && dogsInfo.id && userDog && userDog.id && dogsInfo.id !== userDog.id) || (dogsInfo && dogsInfo.id && !user)) { %>
+      <div class="follow-info">
+        <% if (user && dogsInfo && dogsInfo.id && dogsInfo.followers && dogsInfo.followers[userDog.id]) { %>
+        <button class="button is-follower">Вы подписаны &#10003;</button>
+        <% } else { %>
+        <button class="button follow"
+                <% if(dogsInfo && dogsInfo.id ){ %>
+                data-id="<%= dogsInfo.id %>" 
+                <% } %>>Подписаться &#43;</button>
+                <% } %>
+        <span class="need-autorisation display-none">Для того, чтобы подписаться, Вам необходимо <a href="#signInStep1">зарегистрироваться</a></span>
+        <div class="unFollowDog display-none">
+          <span>Отписаться?</span>
+          <button class="button is-primary unFollow" <% if(dogsInfo && dogsInfo.id ){ %>
+                data-id="<%= dogsInfo.id %>" 
+                <% } %>>Да</button>
+          <button class="button cancel-unFollow">Нет</button>
+        </div>
+      </div> 
+
+      <div class="message-info">
+        <% if (user && dogsInfo && dogsInfo.id) { %>
+         <button class="button send-message" data-id="<%= dogsInfo.id %>">Отправить сообщение &#9993;</button>
+        <% } %>
+        <span class="need-autorisation-to-message display-none">Для того, чтобы отправить сообщение, Вам необходимо <a href="#signInStep1">зарегистрироваться</a></span>
+      </div> 
+
+    <% } %>
+    </div>
+    <div class="dog-info info-block-container">
+      <h3 class="dogs-name title is-2"><%if(dogsInfo.name){print(dogsInfo.name)}else{print('dog')}%></h3>
+        <div class="columns">
+          <div class="column is-one-third">
+            <p class="title-info">Порода:</p>
+          </div>
+          <div class="column">
+            <p class="dog-answer"><%if(dogsInfo.breed){print(dogsInfo.breed)}else{print('не известно')}%></p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-one-third">
+            <p class="title-info">Пол:</p>
+          </div>
+          <div class="column">
+            <p class="dog-answer"><%if(dogsInfo.gender){print(dogsInfo.gender)}else{print('не известно')}%></p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-one-third">
+            <p class="title-info">День рождения:</p>
+          </div>
+          <div class="column">
+            <p class="dog-answer"><%if(dogsInfo.birthday){print(dogsInfo.birthday)}else{print('не известно')}%></p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-one-third">
+            <p class="title-info">Имя владельца:</p>
+          </div>
+          <div class="column">
+            <p class="dog-answer"><%if(dogsInfo.ownerName){print(dogsInfo.ownerName)}else{print('не известно')}%></p>
+          </div>
+        </div>
+        <div class="followers-and-following">
+          <div>
+            <p class="followers-p">
+            <% var counter = 0; %>
+            <% if(dogsInfo.followers){ %>
+              <% for (var key in dogsInfo.followers) { %>
+              <% counter++; %>
+              <% } %>
+            <% } else { %>
+            <% counter = 0; %>
+            <% } %>
+              <span class="followers-count"><%= counter %></span>
+              <% if(counter === 0) { %>
+              <% print('подписчиков') %>
+              <% } else if (counter === 1) { %>
+              <% print('подписчик') %>
+              <% } else if (1 < counter < 5) { %>
+              <% print('подписчика') %>
+              <% } else if (counter >= 5) { %>
+              <% print('подписчиков') %>
+              <% } %>
+              </p>
+          </div>
+          <div>
+            <p class="following-p">
+            <% var counterFollowing = 0; %>
+            <% if(dogsInfo && dogsInfo.following){ %>
+              <% for (var key in dogsInfo.following) { %>
+              <% counterFollowing++; %>
+              <% } %>
+            <% } else { %>
+            <% counterFollowing = 0; %>
+            <% } %>
+              <span class="following-count"><%= counterFollowing %></span>
+              <% if(counterFollowing === 0) { %>
+              <% print('подписок') %>
+              <% } else if (counterFollowing === 1) { %>
+              <% print('подписка') %>
+              <% } else if (1 < counterFollowing < 5) { %>
+              <% print('подписки') %>
+              <% } else if (counterFollowing >= 5) { %>
+              <% print('подписок') %>
+              <% } %>
+               </p>
+          </div>
+        </div>
+
+        <% if(dogsInfo.followers){ %>
+        <div class="followers-dogs display-none">
+        <span class="close-followers-dogs">x</span>
+              <% for (var prop in dogsInfo.followers) { %>
+              <% if(dogsInfo.followers[prop] && allDogs[dogsInfo.followers[prop]]){ %>
+              <div class="dog-follower">
+                <div class="dog-follower-photo">
+                  <img class="dog-follower-photo-img" 
+                    <% if(allDogs && dogsInfo.followers[prop] && allDogs[dogsInfo.followers[prop]] && allDogs[dogsInfo.followers[prop]].avatar && allDogs[dogsInfo.followers[prop]].avatar.downloadURL){ %>
+                    src="<%= allDogs[dogsInfo.followers[prop]].avatar.downloadURL %>" 
+                    <% } else if(allDogs[dogsInfo.followers[prop]]){ %> 
+                    src="img/user_pic.png" 
+                    <% } %> 
+                    <% if(allDogs && allDogs[dogsInfo.followers[prop]] && allDogs[dogsInfo.followers[prop]].id ){ %>
+                    data-id="<%= allDogs[dogsInfo.followers[prop]].id %>" 
+                    <% } %>
+                    >
+                </div>
+                <% if(allDogs && allDogs[dogsInfo.followers[prop]] && allDogs[dogsInfo.followers[prop]].name){ %>
+                <span class="dog-follower-name">
+                  <%= allDogs[dogsInfo.followers[prop]].name %>
+                </span>
+              </div>
+              <% } %>
+            <% } %>
+          <% } %>
+        </div>
+        <% } %>
+
+        <% if(dogsInfo && dogsInfo.following){ %>
+        <div class="following-dogs display-none">
+        <span class="close-following-dogs">x</span>
+              <% for (var prop in dogsInfo.following) { %>
+              <div class="dog-following">
+                <div class="dog-following-photo">
+                  <img class="dog-following-photo-img" 
+                    <% if(allDogs && allDogs[dogsInfo.following[prop]] && allDogs[dogsInfo.following[prop]].avatar && allDogs[dogsInfo.following[prop]].avatar.downloadURL){ %>
+                    src="<%= allDogs[dogsInfo.following[prop]].avatar.downloadURL %>" 
+                    <% } else if(allDogs[dogsInfo.following[prop]]){ %> 
+                    src="img/user_pic.png" 
+                    <% } %> 
+                    <% if(allDogs && allDogs[dogsInfo.following[prop]] && allDogs[dogsInfo.following[prop]].id ){ %>
+                    data-id="<%= allDogs[dogsInfo.following[prop]].id %>" 
+                    <% } %>
+                    >
+                </div>
+                <% if(allDogs && allDogs[dogsInfo.following[prop]] && allDogs[dogsInfo.following[prop]].name){ %>
+                <span class="dog-following-name">
+                  <%= allDogs[dogsInfo.following[prop]].name %>
+                </span>
+              </div>
+            <% } %>
+          <% } %>
+        </div>
+     <% } %>
+    </div>
+  </div>
+
+  <div class="info-block-container" id="profile-map">
+
+  </div>
+
+  <div class="photogallery info-block-container">
+    <div class="title-info clear">Фото:</div>
+    <% if (dogsInfo.photos) { %>
+    <div class="photo-container">
+    <div class="photo-container-not-hidden">
+    <% var count = 0 %>
+    <% for (var prop in dogsInfo.photos){ %>
+      <div class="gallery-mini-photo">
+        <img class="gallery-mini-photo-img" 
+                <% if(dogsInfo.photos[prop].downloadURL){ %>
+                src="<%= dogsInfo.photos[prop].downloadURL %>" 
+                <% } else if(dogsInfo.photos[prop]){ %> 
+                src="img/user_pic.png" 
+                <% } %> 
+                <% if(dogsInfo.photos[prop].description ){ %>
+                data-description="<%= dogsInfo.photos[prop].description %>" 
+                <% } %>
+                <% if(dogsInfo.photos[prop].puth ){ %>
+                data-puth="<%= dogsInfo.photos[prop].puth %>" 
+                <% } %>
+                <% if(dogsInfo.id ){ %>
+                data-id="<%= dogsInfo.id %>" 
+                <% } %>
+                <% count++ %>
+               
+                >
+      </div> 
+    <% if (count >= 15)  { %>
+    <% break; } %>
+    <% } %>
+
+    <% while (count < 15)  { %>
+     <div class="gallery-mini-photo fake-photo"></div>
+    <% count++;} %>
+  <div class="clear"></div>
+  </div>
+  </div>
+  <% } %>
+   <span class="view-all-photos title-info clear display-none">Все фото</span>
+  </div>       
+  
+  <div class="journal info-block-container">
+    <div class="title-info">Блог:</div>
+    <div class="news-container">
+       <% if (dogNews){ %>
+        <%  for(var a = 0; a < dogNews.length;a++){ %>
+          <div class="container-for-news 
+          <% if(dogNews[a].data && dogNews[a].data.sos && dogNews[a].data.sos === true){print('sos')} %>">
+          <% if(dogNews[a].data && dogNews[a].data.sos && dogNews[a].data.sos === true){ %>
+               <span class="sos-span">SOS</span>
+          <% } %>
+          <% if(dogNews[a].data && dogNews[a].data.uid && user && user.uid && dogNews[a].data.uid === user.uid){ %>
+               <span class="delete-news"
+               <% if(dogNews[a].data && dogNews[a].data.id ){ %>
+                 data-id="<%= dogNews[a].data.id %>"
+               <% } %>">
+               X</span>
+            <% } %>
+          <%  if(dogNews[a].data && dogNews[a].data.time){ %>
+               <span class="news-time"><%= dogNews[a].data.time %></span>
+          <%  } %>
+          <%  if(dogNews[a].data && dogNews[a].data.description){ %>
+               <div class="news-description"><% print(dogNews[a].data.description) %></div>
+          <%  } %>
+         
+           <%  if(dogNews[a].images){ %>
+             <div class="photo-container">
+              <%  for (var prop in dogNews[a].images){ %>
+                   <div class="gallery-mini-photo news-mini-photo">
+                      <img class="gallery-mini-photo-img news-mini-photo-img" 
+                              <% if( dogNews[a].images[prop].downloadURL){ %>
+                              src="<%=  dogNews[a].images[prop].downloadURL %>" 
+                              <% } else if( dogNews[a].images[prop]){ %> 
+                              src="img/user_pic.png" 
+                              <% } %> 
+                              <% if( dogNews[a].data.description ){ %>
+                              data-description="<%= dogNews[a].data.description %>" 
+                              <% } %>
+                              <% if(dogNews[a].images[prop].puth ){ %>
+                              data-puth="<%= dogNews[a].images[prop].puth %>" 
+                              <% } %>
+                              <% if(dogNews[a].data.id){ %>
+                              data-id="<%= dogNews[a].data.id %>" 
+                              <% } %>
+                              <% if(dogNews){ %>
+                              data-folder="<%= 'news' %>" 
+                              <% } %>                              
+                              >
+                    </div> 
+              <%  } %>
+              </div>
+          <%  } %>
+           </div>
+        <%  } %>
+        <%  } %>
+    </div>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+<div class="popup display-none">
+  <div class="current-photo">
+     <figure>
+     <img src="" class="gallery-popup-photo">
+     <figcaption>
+     <span class="desc">Описание:</span>
+     <span class="gallery-popup-photo-description"></span>
+      <% if (dogsInfo.ownerUid && user && user.uid && dogsInfo.ownerUid === user.uid) { %>
+        <span class="delete-photo">удалить фото</span>
+     <% } %>
+     </figcaption>
+     
+     </figure>
+     <span class="close-popup">X</span>
+  </div>
+</div>

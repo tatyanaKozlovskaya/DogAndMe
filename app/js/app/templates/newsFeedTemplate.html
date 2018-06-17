@@ -1,0 +1,102 @@
+  <div class="container">
+  <div class="filter-buttons">
+    <% if(user) { %>
+    <button class=" button followed filtered"> Подписки </button>
+    <button class=" button all"> Все </button>
+    <% } %>
+  </div>
+  <div class="news info-block-container">
+    <div class="news-container">
+       <% if (dogNews){ %>
+        <%  for(var a = 0; a < dogNews.length;a++){ %>
+          <div class="container-for-news 
+          <% if(dogNews[a].data && dogNews[a].data.sos && dogNews[a].data.sos === true){print('sos')} %>">
+          <div class="userInfo">
+            <div class="user-img-container">
+              <img class="user-img" 
+                <% if(dogNews[a] && dogNews[a].data.avatar && dogNews[a].data.avatar.downloadURL){ %>
+                src="<%= dogNews[a].data.avatar.downloadURL %>" 
+                <% } else if(dogNews[a]){ %> 
+                src="img/user_pic.png" 
+                <% } %> 
+                <% if(dogNews[a] && dogNews[a].data.dogId ){ %>
+                data-id="<%= dogNews[a].data.dogId %>" 
+                <% } %>
+                >
+            </div>
+            <% if(dogNews[a].data && dogNews[a].data.name){ %>
+               <span class="dog-name"
+                <% if(dogNews[a] && dogNews[a].data.dogId ){ %>
+                data-id="<%= dogNews[a].data.dogId %>" 
+                <% } %>>
+                <%= dogNews[a].data.name %>
+                </span>
+            <% } %>
+          <div class="clear"></div>
+          </div>
+          <% if(dogNews[a].data && dogNews[a].data.uid && user && user.uid && dogNews[a].data.uid === user.uid){ %>
+               <span class="delete-news" 
+               <% if(dogNews[a].data && dogNews[a].data.id ){ %>
+                 data-id="<%= dogNews[a].data.id %>"
+               <% } %>">X</span>
+            <% } %>
+          <% if(dogNews[a].data && dogNews[a].data.sos && dogNews[a].data.sos === true){ %>
+               <span class="sos-span">SOS</span>
+          <% } %>
+          <%  if(dogNews[a].data && dogNews[a].data.time){ %>
+               <span class="news-time"><%= dogNews[a].data.time %></span>
+          <%  } %>
+          <%  if(dogNews[a].data && dogNews[a].data.description){ %>
+               <div class="news-description"><% print(dogNews[a].data.description) %></div>
+          <%  } %>
+         
+           <%  if(dogNews[a].images){ %>
+             <div class="photo-container">
+              <%  for (var prop in dogNews[a].images){ %>
+                   <div class="gallery-mini-photo news-mini-photo">
+                      <img class="gallery-mini-photo-img news-mini-photo-img" 
+                              <% if( dogNews[a].images[prop].downloadURL){ %>
+                              src="<%=  dogNews[a].images[prop].downloadURL %>" 
+                              <% } else if( dogNews[a].images[prop]){ %> 
+                              src="img/user_pic.png" 
+                              <% } %> 
+                              <% if( dogNews[a].data.description ){ %>
+                              data-description="<%= dogNews[a].data.description %>" 
+                              <% } %>
+                              <% if(dogNews[a].images[prop].puth ){ %>
+                              data-puth="<%= dogNews[a].images[prop].puth %>" 
+                              <% } %>
+                              <% if(dogNews[a].data.id){ %>
+                              data-id="<%= dogNews[a].data.id %>" 
+                              <% } %>
+                              <% if(dogNews){ %>
+                              data-folder="<%= 'news' %>" 
+                              <% } %>  
+                              <% if(dogNews[a].data.uid){ %>
+                              data-uid="<%= dogNews[a].data.uid %>" 
+                              <% } %>                             
+                              >
+                    </div> 
+              <%  } %>
+              </div>
+          <%  } %>
+           </div>
+        <%  } %>
+        <%  } %>
+    </div>
+    </div>
+</div>
+    <div class="popup display-none">
+     <div class="current-photo">
+     <figure>
+     <img src="" class="gallery-popup-photo">
+     <figcaption>
+     <span class="desc">Описание:</span>
+     <span class="gallery-popup-photo-description"></span>
+      
+     </figcaption>
+     
+     </figure>
+     <span class="close-popup">X</span>
+  </div>
+</div>
