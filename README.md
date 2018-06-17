@@ -1,7 +1,6 @@
 # DogAndMe
-
-##[демо](https://dog-and-me.firebaseapp.com)
 Социальная сеть для собак и их владельцев
+# **[демо](https://dog-and-me.firebaseapp.com)**
 
 ## Функционал:
 #### Любой пользователь:
